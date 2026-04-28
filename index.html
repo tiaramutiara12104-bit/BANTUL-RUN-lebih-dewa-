@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BFR 2026 - Digital ProMax</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#0f172a;
+--primary:#00f0ff;
+--text:#e5e7eb;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{
+background:linear-gradient(135deg,#0f172a,#0b1120);
+color:var(--text);
+scroll-behavior:smooth;
+}
+
+/* SECTION */
+section{padding:100px 20px;text-align:center;}
+.container{max-width:1150px;margin:auto;}
+h1{font-size:3rem;margin-bottom:20px;}
+h2{font-size:2rem;margin-bottom:30px;}
+
+/* DIGITAL COUNTDOWN */
+.digital-box{
+background:#000;
+padding:60px 20px;
+border-radius:20px;
+box-shadow:0 0 40px rgba(0,240,255,.2);
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.time{
+background:#111;
+padding:25px;
+border-radius:15px;
+min-width:120px;
+}
+
+.time h3{
+font-family:'Orbitron',sans-serif;
+font-size:2.5rem;
+color:var(--primary);
+text-shadow:0 0 15px var(--primary);
+}
+
+.progress{
+margin-top:30px;
+height:10px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+}
+.progress-bar{
+height:100%;
+width:0%;
+background:var(--primary);
+box-shadow:0 0 15px var(--primary);
+}
+
+/* HERO */
+.hero img{
+width:320px;
+border-radius:20px;
+margin-top:25px;
+box-shadow:0 0 40px rgba(0,240,255,.2);
+}
+.info{margin-top:20px;line-height:1.8;}
+
+/* TABLE */
+table{width:100%;max-width:650px;margin:auto;border-collapse:collapse;border-radius:15px;overflow:hidden;}
+th{background:var(--primary);color:#000;padding:20px;}
+td{padding:20px;background:#1f2937;}
+tr:nth-child(even) td{background:#111827;}
+
+/* CATEGORY */
+.cards{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;}
+.card{
+padding:45px;
+width:240px;
+border-radius:20px;
+font-weight:600;
+cursor:pointer;
+transition:.4s;
+color:#fff;
+}
+.card:hover{transform:scale(1.05);}
+.c5k{background:linear-gradient(135deg,#00f0ff,#0ea5e9);}
+.c10k{background:linear-gradient(135deg,#ec4899,#8b5cf6);}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+.gallery img{
+width:100%;
+border-radius:15px;
+transition:.4s;
+}
+.gallery img:hover{transform:scale(1.08);}
+
+/* PODIUM IMAGE */
+.podium{
+display:flex;
+justify-content:center;
+align-items:flex-end;
+gap:30px;
+margin-top:50px;
+flex-wrap:wrap;
+}
+.podium img{
+width:150px;
+transition:.4s;
+}
+.podium img:hover{
+transform:translateY(-10px);
+filter:drop-shadow(0 0 20px gold);
+}
+
+/* FLOAT WA */
+.wa-float{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:#fff;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 0 20px rgba(0,0,0,.4);
+transition:.3s;
+}
+.wa-float:hover{transform:scale(1.1);}
+
+/* FOOTER */
+footer{padding:60px;margin-top:80px;background:#0b1120;opacity:.8;}
+
+@media(max-width:768px){
+h1{font-size:2.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- DIGITAL COUNTDOWN -->
+<section>
+<div class="container digital-box">
+<h1>DIGITAL COUNTDOWN BFR 2026</h1>
+<div class="countdown">
+<div class="time"><h3 id="days">00</h3>Hari</div>
+<div class="time"><h3 id="hours">00</h3>Jam</div>
+<div class="time"><h3 id="minutes">00</h3>Menit</div>
+<div class="time"><h3 id="seconds">00</h3>Detik</div>
+</div>
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+</div>
+</section>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<h2>BFR 2026</h2>
+<img src="poster.jpg">
+<div class="info">
+<p><strong>Tanggal:</strong> 5 Juli 2026</p>
+<p><strong>Lokasi:</strong> Lapangan Paseban</p>
+<p><strong>Jam:</strong> 05.30 WIB - Selesai</p>
+</div>
+</div>
+</section>
+
+<!-- PODIUM IMAGE -->
+<section>
+<div class="container">
+<h2>Hadiah Podium</h2>
+<div class="podium">
+<img src="podium2.png">
+<img src="podium1.png">
+<img src="podium3.png">
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 BFR Bantul Fun Run • Official Event Organizer
+</footer>
+
+<a href="https://wa.me/628217003017" class="wa-float" target="_blank">Chat Admin</a>
+
+<script>
+const eventDate=new Date("July 5, 2026 05:30:00").getTime();
+const startDate=new Date("January 1, 2026 00:00:00").getTime();
+
+setInterval(function(){
+const now=new Date().getTime();
+const distance=eventDate-now;
+
+document.getElementById("days").innerHTML=Math.floor(distance/(1000*60*60*24));
+document.getElementById("hours").innerHTML=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+document.getElementById("minutes").innerHTML=Math.floor((distance%(1000*60*60))/(1000*60));
+document.getElementById("seconds").innerHTML=Math.floor((distance%(1000*60))/1000);
+
+let totalDuration=eventDate-startDate;
+let passed=now-startDate;
+let percent=(passed/totalDuration)*100;
+document.getElementById("progressBar").style.width=percent+"%";
+
+},1000);
+</script>
+
+</body>
+</html>
