@@ -3,193 +3,282 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BFR 2026 - Digital ProMax</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<title>Event Digital Pro Max</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
---bg:#0f172a;
---primary:#00f0ff;
---text:#e5e7eb;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-background:linear-gradient(135deg,#0f172a,#0b1120);
-color:var(--text);
+font-family:'Orbitron',sans-serif;
+background:#0f172a;
+color:white;
 scroll-behavior:smooth;
 }
 
-/* SECTION */
-section{padding:100px 20px;text-align:center;}
-.container{max-width:1150px;margin:auto;}
-h1{font-size:3rem;margin-bottom:20px;}
-h2{font-size:2rem;margin-bottom:30px;}
-
-/* DIGITAL COUNTDOWN */
-.digital-box{
-background:#000;
-padding:60px 20px;
-border-radius:20px;
-box-shadow:0 0 40px rgba(0,240,255,.2);
+section{
+padding:80px 20px;
+text-align:center;
 }
 
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+font-size:2rem;
+margin-bottom:40px;
+}
+
+/* DIGITAL COUNTDOWN */
 .countdown{
 display:flex;
 justify-content:center;
-gap:25px;
+gap:20px;
 flex-wrap:wrap;
-margin-top:40px;
+margin-top:30px;
 }
 
-.time{
-background:#111;
-padding:25px;
+.time-box{
+background:#000;
+padding:30px;
 border-radius:15px;
-min-width:120px;
+min-width:110px;
+box-shadow:0 0 25px #00f0ff;
 }
 
-.time h3{
-font-family:'Orbitron',sans-serif;
-font-size:2.5rem;
-color:var(--primary);
-text-shadow:0 0 15px var(--primary);
+.time-box h3{
+font-size:2.2rem;
+color:#00f0ff;
+}
+
+.time-box span{
+font-size:.8rem;
+opacity:.7;
 }
 
 .progress{
-margin-top:30px;
 height:10px;
-background:#222;
-border-radius:20px;
+background:#1e293b;
+border-radius:10px;
+margin-top:40px;
 overflow:hidden;
 }
+
 .progress-bar{
 height:100%;
 width:0%;
-background:var(--primary);
-box-shadow:0 0 15px var(--primary);
+background:#00f0ff;
 }
 
-/* HERO */
-.hero img{
-width:320px;
+/* POSTER */
+.poster img{
+width:100%;
 border-radius:20px;
-margin-top:25px;
-box-shadow:0 0 40px rgba(0,240,255,.2);
+margin-bottom:20px;
 }
-.info{margin-top:20px;line-height:1.8;}
 
-/* TABLE */
-table{width:100%;max-width:650px;margin:auto;border-collapse:collapse;border-radius:15px;overflow:hidden;}
-th{background:var(--primary);color:#000;padding:20px;}
-td{padding:20px;background:#1f2937;}
-tr:nth-child(even) td{background:#111827;}
+/* PRICE TABLE */
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
 
-/* CATEGORY */
-.cards{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;}
+table td{
+padding:15px;
+border:1px solid #334155;
+}
+
+/* BRUTAL CARD */
+.cards{
+display:flex;
+gap:40px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:50px;
+}
+
 .card{
+position:relative;
+width:280px;
 padding:45px;
-width:240px;
-border-radius:20px;
-font-weight:600;
+border-radius:25px;
 cursor:pointer;
-transition:.4s;
 color:#fff;
+overflow:hidden;
+transition:.4s;
+border:1px solid rgba(255,255,255,0.1);
 }
-.card:hover{transform:scale(1.05);}
-.c5k{background:linear-gradient(135deg,#00f0ff,#0ea5e9);}
-.c10k{background:linear-gradient(135deg,#ec4899,#8b5cf6);}
 
-/* GALLERY */
+.card:hover{
+transform:translateY(-12px) scale(1.05);
+box-shadow:0 0 40px rgba(0,240,255,.6);
+}
+
+.card h3{font-size:1.4rem;margin-bottom:10px}
+.price{margin-bottom:10px}
+.slot{font-size:.8rem;opacity:.7}
+
+.badge{
+position:absolute;
+top:15px;
+right:-35px;
+background:red;
+padding:8px 50px;
+transform:rotate(45deg);
+font-size:.7rem;
+font-weight:bold;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.3),transparent);
+transition:.8s;
+}
+
+.card:hover::before{
+left:100%;
+}
+
+.c5k{background:linear-gradient(135deg,#00f0ff,#0ea5e9)}
+.c10k{background:linear-gradient(135deg,#ec4899,#8b5cf6)}
+
+/* GALERI */
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
+
 .gallery img{
 width:100%;
 border-radius:15px;
-transition:.4s;
 }
-.gallery img:hover{transform:scale(1.08);}
 
-/* PODIUM IMAGE */
+/* PODIUM */
 .podium{
 display:flex;
 justify-content:center;
 align-items:flex-end;
 gap:30px;
-margin-top:50px;
 flex-wrap:wrap;
-}
-.podium img{
-width:150px;
-transition:.4s;
-}
-.podium img:hover{
-transform:translateY(-10px);
-filter:drop-shadow(0 0 20px gold);
+margin-top:40px;
 }
 
-/* FLOAT WA */
+.podium img{
+width:150px;
+}
+
+/* FOOTER */
+footer{
+background:#020617;
+padding:40px;
+margin-top:60px;
+font-size:.8rem;
+opacity:.7;
+}
+
+/* WA FLOAT */
 .wa-float{
 position:fixed;
-bottom:25px;
-right:25px;
+bottom:20px;
+right:20px;
 background:#25D366;
-color:#fff;
+color:white;
 padding:15px 20px;
 border-radius:50px;
 text-decoration:none;
-font-weight:600;
-box-shadow:0 0 20px rgba(0,0,0,.4);
-transition:.3s;
-}
-.wa-float:hover{transform:scale(1.1);}
-
-/* FOOTER */
-footer{padding:60px;margin-top:80px;background:#0b1120;opacity:.8;}
-
-@media(max-width:768px){
-h1{font-size:2.2rem;}
+font-weight:bold;
 }
 </style>
 </head>
+
 <body>
 
-<!-- DIGITAL COUNTDOWN -->
+<!-- COUNTDOWN -->
 <section>
-<div class="container digital-box">
-<h1>DIGITAL COUNTDOWN BFR 2026</h1>
+<div class="container">
+<h2>MENUJU HARI EVENT</h2>
+
 <div class="countdown">
-<div class="time"><h3 id="days">00</h3>Hari</div>
-<div class="time"><h3 id="hours">00</h3>Jam</div>
-<div class="time"><h3 id="minutes">00</h3>Menit</div>
-<div class="time"><h3 id="seconds">00</h3>Detik</div>
+<div class="time-box"><h3 id="days">0</h3><span>HARI</span></div>
+<div class="time-box"><h3 id="hours">0</h3><span>JAM</span></div>
+<div class="time-box"><h3 id="minutes">0</h3><span>MENIT</span></div>
+<div class="time-box"><h3 id="seconds">0</h3><span>DETIK</span></div>
 </div>
+
 <div class="progress">
 <div class="progress-bar" id="progressBar"></div>
 </div>
+
 </div>
 </section>
 
-<!-- HERO -->
-<section class="hero">
-<div class="container">
-<h2>BFR 2026</h2>
+<!-- POSTER -->
+<section>
+<div class="container poster">
 <img src="poster.jpg">
-<div class="info">
-<p><strong>Tanggal:</strong> 5 Juli 2026</p>
-<p><strong>Lokasi:</strong> Lapangan Paseban</p>
-<p><strong>Jam:</strong> 05.30 WIB - Selesai</p>
-</div>
+<p>📅 5 Juli 2026 | 🕓 05:30 WIB | 📍 Lokasi Event Anda</p>
 </div>
 </section>
 
-<!-- PODIUM IMAGE -->
+<!-- PRICELIST -->
 <section>
 <div class="container">
-<h2>Hadiah Podium</h2>
+<h2>Price List</h2>
+<table>
+<tr><td>5K</td><td>Rp 200.000</td></tr>
+<tr><td>10K</td><td>Rp 350.000</td></tr>
+</table>
+</div>
+</section>
+
+<!-- CATEGORY -->
+<section>
+<div class="container">
+<h2>Pilih Kategori</h2>
+<div class="cards">
+
+<div class="card c5k" onclick="window.location.href='https://wa.me/628217003017'">
+<div class="badge">TERLARIS</div>
+<h3>🏃 5K FUN RUN</h3>
+<div class="price">Rp 200.000</div>
+<div class="slot">Sisa 42 Slot</div>
+</div>
+
+<div class="card c10k" onclick="window.location.href='https://wa.me/628217003017'">
+<h3>🔥 10K COMPETITION</h3>
+<div class="price">Rp 350.000</div>
+<div class="slot">Sisa 18 Slot</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- GALERI -->
+<section>
+<div class="container">
+<h2>Galeri Event</h2>
+<div class="gallery">
+<img src="galeri1.jpg">
+<img src="galeri2.jpg">
+<img src="galeri3.jpg">
+</div>
+</div>
+</section>
+
+<!-- PODIUM -->
+<section>
+<div class="container">
+<h2>Podium Juara</h2>
 <div class="podium">
 <img src="podium2.png">
 <img src="podium1.png">
@@ -198,11 +287,12 @@ h1{font-size:2.2rem;}
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-© 2026 BFR Bantul Fun Run • Official Event Organizer
+© 2026 Event Organizer Professional | All Rights Reserved
 </footer>
 
-<a href="https://wa.me/628217003017" class="wa-float" target="_blank">Chat Admin</a>
+<a class="wa-float" href="https://wa.me/628217003017" target="_blank">Chat Admin</a>
 
 <script>
 const eventDate=new Date("July 5, 2026 05:30:00").getTime();
@@ -217,10 +307,8 @@ document.getElementById("hours").innerHTML=Math.floor((distance%(1000*60*60*24))
 document.getElementById("minutes").innerHTML=Math.floor((distance%(1000*60*60))/(1000*60));
 document.getElementById("seconds").innerHTML=Math.floor((distance%(1000*60))/1000);
 
-let totalDuration=eventDate-startDate;
-let passed=now-startDate;
-let percent=(passed/totalDuration)*100;
-document.getElementById("progressBar").style.width=percent+"%";
+let progress=((now-startDate)/(eventDate-startDate))*100;
+document.getElementById("progressBar").style.width=progress+"%";
 
 },1000);
 </script>
