@@ -15,187 +15,88 @@ background:#0f172a;
 color:white;
 scroll-behavior:smooth;
 }
+section{padding:80px 20px;}
+.container{max-width:1100px;margin:auto;}
+h2{font-size:2rem;margin-bottom:40px;text-align:center;}
 
-section{
-padding:80px 20px;
-text-align:center;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-}
-
-h2{
-font-size:2rem;
-margin-bottom:40px;
-}
-
-/* DIGITAL COUNTDOWN */
-.countdown{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-top:30px;
-}
-
+/* COUNTDOWN */
+.countdown{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:30px;}
 .time-box{
-background:#000;
-padding:30px;
-border-radius:15px;
-min-width:110px;
-box-shadow:0 0 25px #00f0ff;
+background:#000;padding:30px;border-radius:15px;min-width:110px;
+box-shadow:0 0 25px #00f0ff;text-align:center;
 }
-
-.time-box h3{
-font-size:2.2rem;
-color:#00f0ff;
-}
-
-.time-box span{
-font-size:.8rem;
-opacity:.7;
-}
-
-.progress{
-height:10px;
-background:#1e293b;
-border-radius:10px;
-margin-top:40px;
-overflow:hidden;
-}
-
-.progress-bar{
-height:100%;
-width:0%;
-background:#00f0ff;
-}
+.time-box h3{font-size:2.2rem;color:#00f0ff;}
+.time-box span{font-size:.8rem;opacity:.7;}
+.progress{height:10px;background:#1e293b;border-radius:10px;margin-top:40px;overflow:hidden;}
+.progress-bar{height:100%;width:0%;background:#00f0ff;}
 
 /* POSTER */
-.poster img{
-width:100%;
-border-radius:20px;
-margin-bottom:20px;
-}
+.poster-section{display:flex;align-items:center;gap:50px;flex-wrap:wrap;}
+.poster-wrapper img{width:100%;max-width:500px;border-radius:20px;}
+.event-info{flex:1;}
+.event-info h2{font-size:2rem;margin-bottom:20px;}
+.event-detail{line-height:1.8;margin-bottom:30px;opacity:.85;}
 
-/* PRICE TABLE */
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
+.register-btn{
+display:inline-block;padding:15px 40px;background:#00f0ff;color:#000;
+font-weight:bold;border-radius:50px;text-decoration:none;transition:.3s;
 }
+.register-btn:hover{transform:scale(1.1);box-shadow:0 0 25px #00f0ff;}
 
-table td{
-padding:15px;
-border:1px solid #334155;
-}
+/* TABLE */
+table{width:100%;border-collapse:collapse;margin-top:20px;}
+table td{padding:15px;border:1px solid #334155;text-align:center;}
 
-/* BRUTAL CARD */
-.cards{
-display:flex;
-gap:40px;
-justify-content:center;
-flex-wrap:wrap;
-margin-top:50px;
-}
-
+/* CATEGORY */
+.cards{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:50px;}
 .card{
-position:relative;
-width:280px;
-padding:45px;
-border-radius:25px;
-cursor:pointer;
-color:#fff;
-overflow:hidden;
-transition:.4s;
+position:relative;width:280px;padding:45px;border-radius:25px;
+cursor:pointer;color:#fff;overflow:hidden;transition:.4s;
 border:1px solid rgba(255,255,255,0.1);
 }
-
-.card:hover{
-transform:translateY(-12px) scale(1.05);
-box-shadow:0 0 40px rgba(0,240,255,.6);
-}
-
-.card h3{font-size:1.4rem;margin-bottom:10px}
+.card:hover{transform:translateY(-12px) scale(1.05);box-shadow:0 0 40px rgba(0,240,255,.6);}
+.card h3{margin-bottom:10px}
 .price{margin-bottom:10px}
 .slot{font-size:.8rem;opacity:.7}
-
 .badge{
-position:absolute;
-top:15px;
-right:-35px;
-background:red;
-padding:8px 50px;
-transform:rotate(45deg);
-font-size:.7rem;
-font-weight:bold;
+position:absolute;top:15px;right:-35px;background:red;
+padding:8px 50px;transform:rotate(45deg);
+font-size:.7rem;font-weight:bold;
 }
-
 .card::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
+content:"";position:absolute;top:0;left:-100%;
+width:100%;height:100%;
 background:linear-gradient(120deg,transparent,rgba(255,255,255,0.3),transparent);
 transition:.8s;
 }
-
-.card:hover::before{
-left:100%;
-}
-
-.c5k{background:linear-gradient(135deg,#00f0ff,#0ea5e9)}
-.c10k{background:linear-gradient(135deg,#ec4899,#8b5cf6)}
+.card:hover::before{left:100%;}
+.c5k{background:linear-gradient(135deg,#00f0ff,#0ea5e9);}
+.c10k{background:linear-gradient(135deg,#ec4899,#8b5cf6);}
 
 /* GALERI */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-border-radius:15px;
-}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.gallery img{width:100%;border-radius:15px;}
 
 /* PODIUM */
-.podium{
-display:flex;
-justify-content:center;
-align-items:flex-end;
-gap:30px;
-flex-wrap:wrap;
-margin-top:40px;
-}
-
-.podium img{
-width:150px;
-}
+.podium{display:flex;justify-content:center;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-top:40px;}
+.podium img{width:150px;}
 
 /* FOOTER */
 footer{
-background:#020617;
-padding:40px;
-margin-top:60px;
-font-size:.8rem;
-opacity:.7;
+background:#020617;padding:40px;margin-top:60px;
+font-size:.8rem;text-align:center;opacity:.7;
 }
 
 /* WA FLOAT */
 .wa-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
+position:fixed;bottom:20px;right:20px;
+background:#25D366;color:white;padding:15px 20px;
+border-radius:50px;text-decoration:none;font-weight:bold;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.poster-section{flex-direction:column;text-align:center;}
 }
 </style>
 </head>
@@ -206,26 +107,37 @@ font-weight:bold;
 <section>
 <div class="container">
 <h2>MENUJU HARI EVENT</h2>
-
 <div class="countdown">
 <div class="time-box"><h3 id="days">0</h3><span>HARI</span></div>
 <div class="time-box"><h3 id="hours">0</h3><span>JAM</span></div>
 <div class="time-box"><h3 id="minutes">0</h3><span>MENIT</span></div>
 <div class="time-box"><h3 id="seconds">0</h3><span>DETIK</span></div>
 </div>
-
-<div class="progress">
-<div class="progress-bar" id="progressBar"></div>
-</div>
-
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
 </div>
 </section>
 
 <!-- POSTER -->
 <section>
-<div class="container poster">
-<img src="poster.jpg">
-<p>📅 5 Juli 2026 | 🕓 05:30 WIB | 📍 Lokasi Event Anda</p>
+<div class="container poster-section">
+<div class="poster-wrapper">
+<img src="poster.jpg" alt="Poster Event">
+</div>
+<div class="event-info">
+<h2>BANTUL FUN RUN 2026</h2>
+<p class="event-detail">
+📅 5 Juli 2026 <br>
+🕓 05:30 WIB <br>
+📍 Bantul, Yogyakarta
+</p>
+
+<a href="https://form.jotform.com/etaniyamanullang/formulir-pendaftaran-bantul-fun-run"
+target="_blank"
+class="register-btn">
+DAFTAR SEKARANG
+</a>
+
+</div>
 </div>
 </section>
 
@@ -246,14 +158,16 @@ font-weight:bold;
 <h2>Pilih Kategori</h2>
 <div class="cards">
 
-<div class="card c5k" onclick="window.location.href='https://wa.me/628217003017'">
+<div class="card c5k"
+onclick="window.open('https://form.jotform.com/etaniyamanullang/formulir-pendaftaran-bantul-fun-run','_blank')">
 <div class="badge">TERLARIS</div>
 <h3>🏃 5K FUN RUN</h3>
 <div class="price">Rp 200.000</div>
 <div class="slot">Sisa 42 Slot</div>
 </div>
 
-<div class="card c10k" onclick="window.location.href='https://wa.me/628217003017'">
+<div class="card c10k"
+onclick="window.open('https://form.jotform.com/etaniyamanullang/formulir-pendaftaran-bantul-fun-run','_blank')">
 <h3>🔥 10K COMPETITION</h3>
 <div class="price">Rp 350.000</div>
 <div class="slot">Sisa 18 Slot</div>
@@ -287,12 +201,15 @@ font-weight:bold;
 </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-© 2026 Event Organizer Professional | All Rights Reserved
+© 2026 Bantul Fun Run | Official Event Page
 </footer>
 
-<a class="wa-float" href="https://wa.me/628217003017" target="_blank">Chat Admin</a>
+<a class="wa-float"
+href="https://wa.me/6285199592421"
+target="_blank">
+Chat Admin
+</a>
 
 <script>
 const eventDate=new Date("July 5, 2026 05:30:00").getTime();
